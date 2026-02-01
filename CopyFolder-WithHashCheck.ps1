@@ -20,7 +20,7 @@ $DstLog  = Join-Path $LogDir "${Subj}-Dst.txt"
 $SrcPath = Join-Path $SrcParent $Subj
 $DstPath = Join-Path $DstParent $Subj
 if (-not (Test-Path $SrcPath)) { Write-Error "移行元フォルダが見つかりません: $SrcPath"; exit 1 }
-if (-not (Test-Path $DstParent)) { Write-Error "移行先親フォルダが見つかりません: $SrcPath"; exit 1 }
+if (-not (Test-Path $DstParent)) { Write-Error "移行先親フォルダが見つかりません: $DstParent"; exit 1 }
 if (Test-Path $DstPath) { Write-Error "移行先フォルダが存在します: $DstPath"; exit 1 }
 
 # --- 関数: ハッシュリスト作成 ---
@@ -68,3 +68,4 @@ if ($null -eq $Diff) {
     }
     exit 1
 }
+
